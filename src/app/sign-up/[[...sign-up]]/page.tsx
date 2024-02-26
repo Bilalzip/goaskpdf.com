@@ -3,7 +3,7 @@ import { SignUp } from "@clerk/nextjs";
 export default function Page() {
   return (
    
-      <SignUp redirectUrl={'/'} />
+      <SignUp redirectUrl={'https://www.goaskpdf.com/'} />
 
   );
 }

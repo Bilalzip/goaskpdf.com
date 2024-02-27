@@ -31,9 +31,7 @@ const Homecomp = async () => {
           </Link>
            
          </div>
-           
-        
-                
+          
             )}
           </div>
         </div>

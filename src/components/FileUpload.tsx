@@ -96,7 +96,7 @@ const FileUpload = () => {
   </div> : (
     <div className='flex flex-col justify-center items-center p-8 md:p-2' >
       <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
-      <p className='text-xl text-white font-mono mt-2'>Get ready for an adventure! We are teleporting you straight to the Chats page 🚀✨</p>
+      <p className='text-xl text-white font-mono mt-2'>Get ready for an adventure! We are teleporting you straight to the Chats page! 🚀✨</p>
     </div>
   )}
     </>

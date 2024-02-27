@@ -45,7 +45,7 @@ const ChatComponent = ({ chatId }: Props) => {
     </div>
     <MessageList messages={messages} isLoading={isLoading} />
    
-    <form onSubmit={handleSubmit} className="bg-white sticky top-0 bottom-0 flex justify-center items-center">
+    <form onSubmit={handleSubmit} className="bg-white sticky top-0 bottom-0 flex justify-center items-center m-2">
       <div className="flex items-center">
         <Input
           value={input}
@@ -53,8 +53,8 @@ const ChatComponent = ({ chatId }: Props) => {
           placeholder="Ask any question..."
           className=" w-60 md:w-96"
         />
-        <Button className="bg-blue-600 ml-2">
-          <Send className="h-4 w-4" />
+        <Button className="bg-blue-600 ml-1 md:ml-2">
+          <Send className="h-3 w-3 md:h-4 md:w-4" />
         </Button>
       </div>
     </form>

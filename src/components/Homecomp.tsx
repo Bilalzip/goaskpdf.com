@@ -20,7 +20,7 @@ const Homecomp = async () => {
       Talk to your Pdf
     </h2>
           <div className="upload mt-4">
-            {Isauth ? (<FileUpload/>) : 
+            {Isauth ? (<FileUpload/>) :
             
             (
          <div className=''>

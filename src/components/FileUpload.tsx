@@ -31,10 +31,11 @@ const FileUpload = () => {
           file_key,
           file_name,
         })
-        setloading(!loading)
+        setloading(false)
         response.data.chat_id
         router.push(`/chat/${response.data.chat_id}`)
       } catch (error) {
+        toast.error("An error has occurred")
         console.log(error)
       }
            
@@ -49,7 +50,7 @@ const FileUpload = () => {
       onDrop: async (acceptedFiles)=>{
              const file = acceptedFiles[0];
              console.log(file)
-             setloading(!false);
+             setloading(true);
              if (file.size > 10*1024*1024){
               toast.error("Please upload a smaller file")
               return;
@@ -83,7 +84,7 @@ const FileUpload = () => {
 
   return (
     <>
-      <div {...getRootProps({
+     { !loading ? <div {...getRootProps({
         className:
           "border-dashed border-2 rounded-xl cursor-pointer bg-gray-50 py-8 flex justify-center items-center flex-col",
       })}>
@@ -92,7 +93,12 @@ const FileUpload = () => {
     <Inbox className="w-36 h-10 text-blue-500 md:w-80 md:h-52" />
     <p className="mt-2 text-sm text-slate-400">Drop PDF Here</p>
   </div>
-  </div>
+  </div> : (
+    <div className='flex flex-col justify-center items-center p-8 md:p-2' >
+      <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
+      <p className='text-xl text-white font-mono mt-2'>Get ready for an adventure! We're teleporting you straight to the Chats page! 🚀✨</p>
+    </div>
+  )}
     </>
   
   )

@@ -91,7 +91,7 @@ const FileUpload = (prop : any) => {
     if (reached) {
       return (
         <div className="  p-4 rounded">
-          Oops! Looks like you've hit your limit. Time to level up your account!
+          Oops! Looks like you have hit your limit. Time to level up your account!
         </div>
       );
     }

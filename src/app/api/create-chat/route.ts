@@ -4,7 +4,6 @@ import { db } from "@/lib/db";
 import { chats } from "@/lib/db/schema";
 import { auth } from "@clerk/nextjs";
 import { NextRequest, NextResponse } from "next/server";
-
 export async function POST(req: NextRequest , res: NextResponse){
     const { userId } = await auth();
     if (!userId) {
@@ -13,7 +12,6 @@ export async function POST(req: NextRequest , res: NextResponse){
   try {
     const body = await req.json();
     const { file_key, file_name } = body;
-    console.log(file_key, file_name);
    const res = await loadS3IntoPinecone(file_key);
    const chat_id = await db
    .insert(chats)

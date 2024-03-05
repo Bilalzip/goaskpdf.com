@@ -17,7 +17,7 @@ const ChatSideBar = ({ chats, chatId }: Props) => {
     setWidth(!width)
   }
   return (
-    <div className={` ${width ? "w-fit ease-out duration-1000 " : "w-fit"} rounded-r-sm text-gray-200 bg-gray-900`}>
+    <div className={` ${width ? "w-fit ease-out duration-1000 " : "w-fit"} rounded-r-sm text-gray-200 bg-gray-900 m-1`}>
       <button onClick={HandleWidth} className='flex justify-center items-center'> 
       <Menu className='ml-4 m-2' size={'30'}/>
       </button>
@@ -34,9 +34,10 @@ const ChatSideBar = ({ chats, chatId }: Props) => {
               width ? (<MessageCircle/>) : (
                 <div className='flex flex-row gap-2'>
                   <MessageCircle/> 
-                <p>
-                    {chat.pdfName}
-                </p>
+                  <p>
+  {chat.pdfName.length > 20 ? `${chat.pdfName.trim().substring(0, 20)}...` : chat.pdfName.trim()}
+</p>
+
                 </div>
                 
               )

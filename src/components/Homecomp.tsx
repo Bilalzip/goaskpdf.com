@@ -11,12 +11,11 @@ import { eq } from 'drizzle-orm';
 const Homecomp = async () => {
     const {userId}  = await auth();
     const Isauth = !!userId;
-
-  return (
+  return ( 
     <div className='flex  mx-auto h-screen justify-center items-center'>
       <div>
         <div className='flex flex-col items-center justify-center'>
-        <h2 className="text-white scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className="text-black scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ">
       Talk to your Pdf
     </h2>
           <div className="upload mt-4">
@@ -29,7 +28,6 @@ const Homecomp = async () => {
                   Login to get Started
                 </Button> <LogIn/>
           </Link>
-           
          </div>
           
             )}

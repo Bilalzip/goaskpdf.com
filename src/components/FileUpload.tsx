@@ -8,10 +8,17 @@ import { uploadToS3 } from '@/lib/UploadFile'
 import { useMutation } from "@tanstack/react-query";
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { checkSubscription } from '@/lib/Subscription'
 
-const FileUpload = () => {
+const FileUpload = (prop : any) => {
+  
+  const [loading , setloading] = useState<any>(false);
 
-  const [loading , setloading] = useState<any>(false)
+  const reached = !prop.isPro && prop.filecount > 1 === true;
+
+  console.log(reached)
+
+
 
  const router = useRouter();
   // for performing api request using react query 
@@ -79,6 +86,18 @@ const FileUpload = () => {
              }
       }
     })
+
+
+    if (reached) {
+      return (
+        <div className="  p-4 rounded">
+          Oops! Looks like you've hit your limit. Time to level up your account!
+        </div>
+      );
+    }
+    
+    
+    
 
 
 

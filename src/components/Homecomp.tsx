@@ -7,11 +7,28 @@ import Link from 'next/link';
 import { db } from '@/lib/db';
 import { chats } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
+import { checkSubscription } from '@/lib/Subscription';
 
 const Homecomp = async () => {
-    const {userId}  = await auth();
+    const {userId}:any  = await auth();
     const Isauth = !!userId;
-  return ( 
+    const limit = await db.select().from(chats).where(eq(chats.userId, userId));
+    console.log(limit)
+
+    // logic for restricting file upload 
+
+    let filecount = 0;
+    for (let i = 0; i <limit.length; i++) {
+
+     if ( limit[i].pdfName  !== undefined){
+      filecount++;
+     }
+    }
+
+    const isPro = await checkSubscription();
+
+    console.log(filecount)
+    return ( 
     <div className='flex  mx-auto h-screen justify-center items-center'>
       <div>
         <div className='flex flex-col items-center justify-center'>
@@ -19,7 +36,7 @@ const Homecomp = async () => {
       Talk to your Pdf
     </h2>
           <div className="upload mt-4">
-            {Isauth ? (<FileUpload/>) :
+            {Isauth ? (<FileUpload filecount = {filecount} isPro = {isPro} />) :
             
             (
          <div className=''>

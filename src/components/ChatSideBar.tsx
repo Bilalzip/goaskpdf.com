@@ -16,6 +16,8 @@ const ChatSideBar = ({ chats, chatId }: Props) => {
   const HandleWidth = () =>{
     setWidth(!width)
   }
+
+
   return (
     <div className={` ${width ? "w-fit ease-out duration-1000 " : "w-fit"} rounded-r-sm text-gray-200 bg-gray-900 m-1`}>
       <button onClick={HandleWidth} className='flex justify-center items-center'> 

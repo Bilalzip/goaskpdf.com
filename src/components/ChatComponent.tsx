@@ -51,19 +51,15 @@ const ChatComponent = ({ chatId }: Props) => {
 
   console.log(messages)
   return (
-    <div className="h-screen flex flex-col justify-between w-fit md:p-0 p-4">
+    <div className="h-screen flex flex-col justify-between w-full md:p-8 p-2">
     <div className="md:sticky top-2 inset-x-0 p-2 bg-white h-fit">
       <h3 className="text-xl font-bold">Chat</h3>
     </div>
-   { messages.length > 0 ? ( <div className="p-1">
+ 
     <MessageList messages={messages} isLoading={isLoading} />
-    </div>) : (<div>
-    
-     </div>
-    )} 
    
    <form onSubmit={handleSubmit} className="bg-white md:ml-[35%]">
-  <div className="flex flex-row gap-2 md:gap-4">
+  <div className={`flex flex-row gap-2 md:gap-4 ${!messages ? "items-center justify-center" : ""}`}>
     {messages.length > 2 ? (
       <div onClick={() => HandleClear(chatId)} className="bg-blue-600 rounded-md flex items-center w-fit">
         <Eraser className="h-5 w-12 md:h-10 md:w-12 md:p-1 p-0" />
@@ -75,14 +71,13 @@ const ChatComponent = ({ chatId }: Props) => {
       value={input}
       onChange={handleInputChange}
       placeholder="Ask any question..."
-      className="col-span-2 w-fit md:w-1/3"
+      className="col-span-2 w-fit"
     />
     <Button className="bg-blue-600 w-fit">
       <Send className="h-3 w-3 md:h-4 md:w-4" />
     </Button>
   </div>
 </form>
-
   </div>
   );
 };

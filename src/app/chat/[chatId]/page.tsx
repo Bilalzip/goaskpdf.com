@@ -31,7 +31,7 @@ const ChatPage = async ({ params: { chatId } }: Props) => {
   const currentChat = _chats.find((chat) => chat.id === parseInt(chatId));
 
   return (
-    <div className="flex flex-row w-full overflow-hidden">
+    <div className="flex flex-row w-full overflow-hidden gap-1 md:gap-4">
     <ChatSideBar chats={_chats} chatId={parseInt(chatId)} isPro={false} />
     <ChatComponent chatId={parseInt(chatId)} />
   </div>

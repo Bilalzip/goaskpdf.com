@@ -23,10 +23,10 @@ const Navbar = async () => {
       }
     }
   return ( 
-    <div className='rounded-md flex md:justify-between md:items-center md:flex-row flex-col p-4 m-1 bg-gray-800 text-white font-semibold justify-start items-start'>
+    <div className='rounded-md flex justify-between items-center md:flex-row flex-col p-4 m-1 bg-gray-800 text-white font-semibold'>
       <div className="logo text-2xl">GoAskPdf.com</div>
       <div className="menus ">
-    <ul className='font-serif flex flex-col md:flex-row justify-center items-center gap-4 md:gap-3 mt-2 '>
+    <ul className='font-serif flex flex-row justify-center items-center gap-4 md:gap-3 mt-2 '>
            <UpgradeButton isPro = {isPro}/>
     {Isauth && firstChat && (
                <>

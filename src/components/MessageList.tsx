@@ -30,7 +30,7 @@ const MessageList = ({ messages, isLoading }: Props) => {
   return (
     <div
       ref={messageContainerRef}
-      className="flex flex-col gap-2 px-4 relative scroll-mt-[var(--scroll-mt)] overflow-auto"
+      className="flex flex-col gap-2 px-4 relative scroll-mt-[var(--scroll-mt)] overflow-auto mr-10"
       style={{ maxHeight: "calc(100vh - 200px)" }} // Adjust height as per your requirement
     >
       {messages.map((message) => {

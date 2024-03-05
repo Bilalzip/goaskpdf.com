@@ -33,7 +33,7 @@ const ChatSideBar = ({ chats, chatId }: Props) => {
               })}
             >
             {
-              width ? (<MessageCircle/>) : (
+              width ? (<MessageCircle size={"8px"}/> ) : (
                 <div className='flex flex-row gap-2'>
                   <MessageCircle/> 
                   <p>

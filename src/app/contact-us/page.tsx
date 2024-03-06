@@ -39,8 +39,6 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
-    <Navbar/>
-   
     <div className="bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] min-h-screen flex items-center justify-center md:m-0 m-10">
       <div className="bg-gray-700 p-8 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3">
         <h2 className="text-white text-2xl mb-4">Contact Us</h2>

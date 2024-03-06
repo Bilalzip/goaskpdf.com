@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
 import Providers from "@/components/Provider";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Goaskpdf",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <html lang="en"  suppressHydrationWarning={true}>
       <body className={inter.className}>
           {children}
+          <Footer/>
         </body>
     </html>
   

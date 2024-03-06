@@ -1,4 +1,5 @@
 "use client"
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import axios from 'axios';
 import { Loader2 } from 'lucide-react';
@@ -81,7 +82,9 @@ const ContactPage: React.FC = () => {
          { !loading ? <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button> : <div className='flex items-center justify-center'> <Loader2 className="h-10 w-10 text-blue-500 animate-spin" /></div> }
         </form>
       </div>
-    </div> </>
+    </div>
+    <Footer/>
+     </>
   );
 };
 

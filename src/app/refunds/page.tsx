@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import React from 'react';
 
@@ -40,7 +41,9 @@ const page: React.FC = () => {
           If you have any questions or concerns regarding our Refund and Cancellation Policy, please contact us at support@goaskpdf.com.
         </p>
       </div>
-    </div>    </>
+    </div>
+    
+    <Footer/>    </>
   );
 };
 

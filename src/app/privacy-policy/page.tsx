@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import React from 'react'
 
@@ -51,7 +52,9 @@ const page = () => {
       <ul className="list-disc pl-6 mb-4">
         <li>By email: info@goaskpdf.com</li>
       </ul>
-    </div></>
+    </div>
+    <Footer/>
+    </>
   )
 }
 

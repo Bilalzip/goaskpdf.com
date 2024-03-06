@@ -27,7 +27,7 @@ const Navbar = async () => {
       
       <div className="menus ">
     <ul className='font-serif flex flex-row justify-center items-center gap-4 md:gap-3 mt-2 '>
-           <UpgradeButton isPro = {isPro}/>
+         { userId ?   <UpgradeButton isPro = {isPro}/> : <></>}
     {Isauth && firstChat && (
                <>
                <Link href={`/chat/${firstChat.id}`}>

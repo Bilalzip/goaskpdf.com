@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Button } from './ui/button'
 import { UserButton, auth } from '@clerk/nextjs'
 import { User } from '@clerk/nextjs/server';
@@ -24,7 +23,8 @@ const Navbar = async () => {
     }
   return ( 
     <div className='rounded-md flex justify-between items-center md:flex-row flex-col p-4 m-1 bg-gray-800 text-white font-semibold'>
-      <div className="logo text-2xl">GoAskPdf.com</div>
+      <div className="logo text-2xl"><Link href={'/'} >GoAskPdf.com</Link></div>
+      
       <div className="menus ">
     <ul className='font-serif flex flex-row justify-center items-center gap-4 md:gap-3 mt-2 '>
            <UpgradeButton isPro = {isPro}/>

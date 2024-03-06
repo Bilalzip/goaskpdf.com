@@ -3,7 +3,6 @@ import React, { useCallback, useState } from 'react'
 import {useDropzone} from 'react-dropzone'
 import {Inbox , Loader2} from "lucide-react"
 import { auth } from '@clerk/nextjs'
-import toast from 'react-hot-toast'
 import { uploadToS3 } from '@/lib/UploadFile'
 import { useMutation } from "@tanstack/react-query";
 import axios from 'axios'
@@ -11,15 +10,8 @@ import { useRouter } from 'next/navigation'
 import { checkSubscription } from '@/lib/Subscription'
 
 const FileUpload = (prop : any) => {
-  
   const [loading , setloading] = useState<any>(false);
-
   const reached = !prop.isPro && prop.filecount > 1 === true;
-
-  console.log(reached)
-
-
-
  const router = useRouter();
   // for performing api request using react query 
 
@@ -42,7 +34,6 @@ const FileUpload = (prop : any) => {
         response.data.chat_id
         router.push(`/chat/${response.data.chat_id}`)
       } catch (error) {
-        toast.error("An error has occurred")
         console.log(error)
       }
            
@@ -59,7 +50,6 @@ const FileUpload = (prop : any) => {
              console.log(file)
              setloading(true);
              if (file.size > 10*1024*1024){
-              toast.error("Please upload a smaller file")
               return;
              }
                
@@ -68,7 +58,6 @@ const FileUpload = (prop : any) => {
         const data = await uploadToS3(file);
         console.log("meow", data);
         if (!data?.file_key || !data.file_name) {
-          toast.error("Something went wrong");
           return;
         }
         mutate(data, {
@@ -77,12 +66,12 @@ const FileUpload = (prop : any) => {
           },
           onError: (err) => {
             console.log(err)
-            toast.error("Error creating chat");
+            
             console.error(err);
           },
         });
              } catch (error:any) {
-              toast.error(" Couldn't upload" , error);
+             
              }
       }
     })

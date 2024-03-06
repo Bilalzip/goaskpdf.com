@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
-import { Toaster } from "react-hot-toast";
 import Providers from "@/components/Provider";
+import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
-import { UserCreditsProvider } from "@chipp/nextjs-chipp/client";
 export const metadata: Metadata = {
   title: "Goaskpdf",
   description: "Leverage Ai to ask questions to your pdf",
@@ -19,8 +18,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <Providers>
-      <html lang="en">
-     
+      <html lang="en"  suppressHydrationWarning={true}>
       <body className={inter.className}>
           {children}
         </body>

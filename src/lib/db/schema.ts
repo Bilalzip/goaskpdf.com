@@ -44,3 +44,10 @@ import {
     stripePriceId: varchar("stripe_price_id", { length: 256 }),
     stripeCurrentPeriodEnd: timestamp("stripe_current_period_ended_at"),
   });
+
+
+  export const ContactForm = pgTable("contact_form", {
+    name: varchar("name", { length: 255 }).notNull(),
+    email: varchar("email", { length: 255 }).notNull(),
+    message: text("message").notNull(),
+  });

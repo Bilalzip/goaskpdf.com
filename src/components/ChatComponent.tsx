@@ -8,7 +8,6 @@ import MessageList from "./MessageList";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Message } from "ai";
-import toast from "react-hot-toast";
 
 type Props = { chatId: number };
 
@@ -43,9 +42,7 @@ const ChatComponent = ({ chatId }: Props) => {
   const HandleClear = async (chatId:number)=>{
     try {
       const res = await axios.post('/api/wipe-message', {chatId:chatId});
-      toast.success("Chats cleared successfully")
     } catch (error) {
-      toast.error("An error occured")
     }
   }
   return (

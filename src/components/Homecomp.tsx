@@ -26,8 +26,6 @@ const Homecomp = async () => {
     }
 
     const isPro = await checkSubscription();
-
-    console.log(filecount)
     return ( 
     <div className='flex  mx-auto h-screen justify-center items-center'>
       <div>

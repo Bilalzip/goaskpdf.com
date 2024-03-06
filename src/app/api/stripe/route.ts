@@ -42,7 +42,7 @@ export async function GET() {
           price_data: {
             currency: "INR",
             product_data: {
-              name: "ChatPDF Pro",
+              name: "GoAskPdf Pro",
               description: "Unlimited PDF sessions!",
             },
             unit_amount: 50000,

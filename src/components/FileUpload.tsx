@@ -36,7 +36,6 @@ const FileUpload = (prop : any) => {
       } catch (error) {
         console.log(error)
       }
-           
     }
   });
    

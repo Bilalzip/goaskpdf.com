@@ -8,15 +8,12 @@ import { db } from '@/lib/db';
 import { chats } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { checkSubscription } from '@/lib/Subscription';
+import TextAnimation from './TextAnimation';
 
 const Homecomp = async () => {
     const {userId}:any  = await auth();
     const Isauth = !!userId;
     const limit = await db.select().from(chats).where(eq(chats.userId, userId));
-    console.log(limit)
-
-    // logic for restricting file upload 
-
     let filecount = 0;
     for (let i = 0; i <limit.length; i++) {
 
@@ -24,18 +21,14 @@ const Homecomp = async () => {
       filecount++;
      }
     }
-
     const isPro = await checkSubscription();
     return ( 
     <div className='flex  mx-auto h-screen justify-center items-center'>
       <div>
         <div className='flex flex-col items-center justify-center'>
-        <h2 className="text-black scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ">
-      Talk to your Pdf
-    </h2>
+        <TextAnimation text = 'Chat With Pdf'/>
           <div className="upload mt-4">
             {Isauth ? (<FileUpload filecount = {filecount} isPro = {isPro} />) :
-            
             (
          <div className=''>
           <Link className='flex flex-row items-center justify-center gap-2' href={'/sign-in'}>

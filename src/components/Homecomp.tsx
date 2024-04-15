@@ -1,7 +1,7 @@
 import React from 'react'
 import FileUpload from './FileUpload'
 import { auth } from '@clerk/nextjs';
-import { LogIn } from 'lucide-react';
+import { Upload } from 'lucide-react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { db } from '@/lib/db';
@@ -33,8 +33,8 @@ const Homecomp = async () => {
          <div className=''>
           <Link className='flex flex-row items-center justify-center gap-2' href={'/sign-in'}>
           <Button  className='text-white'>
-                  Login to get Started
-                </Button> <LogIn/>
+                  Upload Pdf
+                </Button> <Upload/>
           </Link>
          </div>
           
